@@ -50,6 +50,17 @@ public class Registration {
 		}
 	}
 
+	// password rule one passed of minimum eight characters
+	public void passwordRuleOneValidation() {
+		System.out.println("Enter your password: ");
+		String password = input.next();
+		if (Pattern.matches("^[a-z]{8,}$", password)) {
+		} else {
+			System.out.println("Invalid password format minimum eight characters required for passing rule one");
+			passwordRuleOneValidation();
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome for Registration");
 		Registration validation = new Registration();
@@ -57,6 +68,7 @@ public class Registration {
 		validation.lastNameValidation();
 		validation.emailValidation();
 		validation.mobileNumberValidation();
+		validation.passwordRuleOneValidation();
 	}
 
 }
