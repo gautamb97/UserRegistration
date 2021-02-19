@@ -39,12 +39,24 @@ public class Registration {
 		}
 	}
 
+	// Mobile Number Validation
+	public void mobileNumberValidation() {
+		System.out.println("Enter your mobile number: ");
+		String mobileNumber = input.next();
+		if (Pattern.matches("^(\\+91)?[6-9]{1}[0-9]{9}$", mobileNumber)) {
+		} else {
+			System.out.println("Invalid mobile number re-enter your mobile number");
+			mobileNumberValidation();
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome for Registration");
 		Registration validation = new Registration();
 		validation.firstNameValidation();
 		validation.lastNameValidation();
 		validation.emailValidation();
+		validation.mobileNumberValidation();
 	}
 
 }
