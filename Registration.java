@@ -28,11 +28,23 @@ public class Registration {
 		}
 	}
 
+	// Email validation
+	public void emailValidation() {
+		System.out.println("Enter your email id: ");
+		String email = input.next();
+		if (Pattern.matches("^[a-z]{3,}\\@[a-z]*\\.[a-z]*$", email)) {
+		} else {
+			System.out.println("Invalid email id re-enter your email id");
+			emailValidation();
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome for Registration");
 		Registration validation = new Registration();
 		validation.firstNameValidation();
 		validation.lastNameValidation();
+		validation.emailValidation();
 	}
 
 }
