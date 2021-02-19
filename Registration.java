@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 public class Registration {
 	static Scanner input = new Scanner(System.in);
@@ -32,7 +32,7 @@ public class Registration {
 	public void emailValidation() {
 		System.out.println("Enter your email id: ");
 		String email = input.next();
-		if (Pattern.matches("^[a-z]{3,}\\@[a-z]*\\.[a-z]*$", email)) {
+		if (Pattern.matches("^[a-z\\+\\-\\_\\.a-z0-9]{3,}\\@[a-z]*\\.[a-z]{1,3}\\.[a-z]{2,3}$", email)) {
 		} else {
 			System.out.println("Invalid email id re-enter your email id");
 			emailValidation();
